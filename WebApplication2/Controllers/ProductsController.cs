@@ -25,6 +25,20 @@ namespace WebApplication2.Controllers
             return View(repo.getTop10Data());
         }
 
+
+        [HttpPost]
+        public ActionResult Index(IList<UpdateProductStockVM> data){
+            foreach (var item in data)
+            {
+                db.Product.Find(item.ProductId).Stock = item.Stock;
+            }
+            db.SaveChanges();
+
+            return RedirectToAction("Index");
+        }
+
+        
+
         // GET: Products/Details/5
         public ActionResult Details(int? id)
         {

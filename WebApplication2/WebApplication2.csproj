@@ -175,6 +175,7 @@
     <Compile Include="Controllers\EFController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\ModelBindingController.cs" />
     <Compile Include="Controllers\ProductsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -267,6 +268,8 @@
     <Compile Include="Models\RepositoryIQueryableExtensions.cs">
       <DependentUpon>IRepository.EF6.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\SampleVM.cs" />
+    <Compile Include="Models\UpdateProductStockVM.cs" />
     <Compile Include="Models\vwClientOccupation.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -377,6 +380,8 @@
     <Content Include="Views\EF\CustomerOccupation.cshtml" />
     <Content Include="Views\EF\RemoveClient.cshtml" />
     <Content Include="Views\Home\ARtest.cshtml" />
+    <Content Include="Views\ModelBinding\Index.cshtml" />
+    <Content Include="Views\ModelBinding\IndexResult.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Views\Base\" />
