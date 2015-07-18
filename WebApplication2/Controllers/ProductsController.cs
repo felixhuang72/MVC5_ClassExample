@@ -10,14 +10,17 @@ using WebApplication2.Models;
 
 namespace WebApplication2.Controllers
 {
-    public class ProductsController : Controller
+    public class ProductsController : BaseController
     {
-        private FabricsEntities db = new FabricsEntities();
+        
+        //private FabricsEntities db = new FabricsEntities();
         ProductRepository repo = RepositoryHelper.GetProductRepository();
 
         // GET: Products
         public ActionResult Index()
-        {   
+        {
+            
+            
             //return View(db.Product.Take(20).ToList());
             return View(repo.getTop10Data());
         }

@@ -21,18 +21,24 @@ namespace WebApplication2
             //    url: "{controller}.{action}.{id}",
             //    defaults: new { controller = "Products", action = "Edit", id = UrlParameter.Optional }
             //    );
-            routes.MapRoute(
-                name: "Rule2",
-                url: "Docs/{controller}-{action}/{id}",
-                defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
-                
-                );
 
             routes.MapRoute(
                 name: "Rule1",
                 url: "{controller}.{action}.{id}",
-                defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
+                defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional },
+                constraints: new { controller = "Products", action = "Edit" }
+
                 );
+
+            routes.MapRoute(
+                name: "Rule2",
+                url: "Docs/{controller}-{action}/{id}",
+                defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional },
+                constraints: new { controller = "Products" }
+
+                );
+
+            
 
             routes.MapRoute(
                 name: "Default",
