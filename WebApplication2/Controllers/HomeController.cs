@@ -20,6 +20,17 @@ namespace WebApplication2.Controllers
             return View();
         }
 
+
+        public ActionResult ARtest()
+        {
+            return View();
+        }
+
+        public ActionResult ARtestPartial()
+        {
+            return PartialView("ARtest");
+        }
+
         public ActionResult Contact()
         {
             ViewBag.Message = "Your contact page.";

@@ -375,6 +375,7 @@
     <Content Include="Views\EF\Update5.cshtml" />
     <Content Include="Views\EF\CustomerOccupation.cshtml" />
     <Content Include="Views\EF\RemoveClient.cshtml" />
+    <Content Include="Views\Home\ARtest.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Views\Base\" />
