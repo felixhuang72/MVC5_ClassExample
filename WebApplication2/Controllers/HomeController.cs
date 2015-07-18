@@ -31,6 +31,11 @@ namespace WebApplication2.Controllers
             return PartialView("ARtest");
         }
 
+        public ActionResult FileTest()
+        {
+            return File(Server.MapPath("~/Content/_037710.jpg"), "image/jpeg", "037710-TEST.jpg");
+        }
+
         public ActionResult Contact()
         {
             ViewBag.Message = "Your contact page.";
