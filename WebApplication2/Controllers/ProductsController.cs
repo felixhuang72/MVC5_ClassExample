@@ -26,15 +26,36 @@ namespace WebApplication2.Controllers
         }
 
 
-        [HttpPost]
-        public ActionResult Index(IList<UpdateProductStockVM> data){
-            foreach (var item in data)
-            {
-                db.Product.Find(item.ProductId).Stock = item.Stock;
-            }
-            db.SaveChanges();
+        //[HttpPost]
+        //public ActionResult Index(IList<UpdateProductStockVM> data)
+        //{
+        //    if(ModelState.IsValid)
+        //    { 
+        //        foreach (var item in data)
+        //        {
+        //            db.Product.Find(item.ProductId).Stock = item.Stock;
+        //        }
+        //        db.SaveChanges();
+        //    }
 
-            return RedirectToAction("Index");
+        //    return RedirectToAction("Index");
+        //}
+
+        [HttpPost]
+        public ActionResult Index(FormCollection form)
+        {
+            var data = new List<UpdateProductStockVM>();
+
+            if (TryUpdateModel<List<UpdateProductStockVM>>(data, "data"))
+            {
+                foreach (var item in data)
+                {
+                    db.Product.Find(item.ProductId).Stock = item.Stock;
+                }
+                db.SaveChanges();
+            }
+
+            return View(repo.getTop10Data());
         }
 
         

@@ -164,6 +164,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ActionFilters\MyFilterAttribute.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\IdentityConfig.cs" />
@@ -171,6 +172,7 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\AFController.cs" />
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\EFController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -382,8 +384,10 @@
     <Content Include="Views\Home\ARtest.cshtml" />
     <Content Include="Views\ModelBinding\Index.cshtml" />
     <Content Include="Views\ModelBinding\IndexResult.cshtml" />
+    <Content Include="Views\AF\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Views\ActionFilter\" />
     <Folder Include="Views\Base\" />
   </ItemGroup>
   <ItemGroup>

@@ -10,12 +10,9 @@
     @Html.ActionLink("Create New", "Create")
 </p>
 
-@{
+@using(Html.BeginForm()){
     var data = Model.ToArray();
     
-}
-
-@using(Html.BeginForm()){
     <table class="table">
         <tr>
             <th>
@@ -49,6 +46,7 @@
             </td>*@
             <td>
                 @Html.EditorFor(modelItem => data[i].Stock)
+                @Html.ValidationMessageFor(modelItem => data[i].Stock, "", new { @class = "text-danger" })
                 @Html.HiddenFor(modelItem=>data[i].ProductId)
             </td>
             <td>
@@ -62,4 +60,7 @@
     </table>
     
     <button type="submit">Save</button>
+}
+@section Scripts {
+    @*@Scripts.Render("~/bundles/jqueryval")*@
 }
