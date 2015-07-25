@@ -47,5 +47,14 @@ namespace WebApplication2.Controllers
         {
             return View();
         }
+
+
+        public ActionResult layoutTest()
+        {
+            
+            return View();
+        }
     }
+
+
 }

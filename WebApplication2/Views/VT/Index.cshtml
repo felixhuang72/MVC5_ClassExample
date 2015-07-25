@@ -1,0 +1,36 @@
+﻿@model int[]
+@{
+    string result = string.Empty;
+}
+
+<h2>Index</h2>
+<h3>Format 1</h3>
+@foreach (var p in Model)
+{
+    result += p.ToString();
+}
+@result
+
+<h3>Format 2</h3>
+@{
+ result = string.Empty;
+ foreach (var p in Model)
+ {
+   result +=p.ToString()+" ";
+ } 
+}
+@result
+
+<h3>Foramt 3</h3>
+<ul>
+@foreach (var p in Model)
+{
+  <li>@p.ToString()</li>
+}
+</ul>
+
+<h3>Format 4</h3>
+@foreach (var p in Model)
+{
+    <text>@p.ToString()</text>
+}
