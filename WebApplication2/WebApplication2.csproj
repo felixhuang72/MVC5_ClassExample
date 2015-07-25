@@ -576,6 +576,7 @@
     <Content Include="Views\Shared\DisplayTemplates\GoogleMapLink.cshtml" />
     <Content Include="Views\Shared\DisplayTemplates\Gender.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\Gender.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\Date.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Views\ActionFilter\" />

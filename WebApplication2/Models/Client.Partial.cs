@@ -26,6 +26,8 @@ namespace WebApplication2.Models
         [StringLength(1, ErrorMessage="欄位長度不得大於 1 個字元")]
         [UIHint("Gender")]
         public string Gender { get; set; }
+        [Required]
+        [DataType(DataType.Date)]
         public Nullable<System.DateTime> DateOfBirth { get; set; }
         public Nullable<double> CreditRating { get; set; }
         
