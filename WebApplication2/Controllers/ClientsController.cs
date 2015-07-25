@@ -7,6 +7,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using WebApplication2.Models;
+using PagedList;
 
 namespace WebApplication2.Controllers
 {
@@ -15,10 +16,13 @@ namespace WebApplication2.Controllers
         private FabricsEntities db = new FabricsEntities();
 
         // GET: Clients
-        public ActionResult Index()
+        public ActionResult Index(int p=1)
         {
-            var client = db.Client.Include(c => c.Occupation);
-            return View(client.ToList());
+            var client = db.Client.Include(c => c.Occupation).OrderBy(c=>c.ClientId);
+            
+            var p_data = client.ToPagedList(pageNumber: p, pageSize: 10);
+
+            return View(p_data);
         }
 
         // GET: Clients/Details/5

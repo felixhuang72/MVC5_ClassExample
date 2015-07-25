@@ -1,4 +1,6 @@
 ﻿@model IEnumerable<WebApplication2.Models.Client>
+@using PagedList
+@using PagedList.Mvc
 
 @{
     ViewBag.Title = "Index";
@@ -8,6 +10,7 @@
 
 <p>
     @Html.ActionLink("Create New", "Create")
+    
 </p>
 <table class="table">
     <tr>
@@ -80,5 +83,10 @@
         </td>
     </tr>
 }
-
 </table>
+
+@{
+    var data = Model as IPagedList<WebApplication2.Models.Client>;
+}
+@Html.PagedListPager(data, page => Url.Action("Index", new {p=page}))
+
