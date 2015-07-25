@@ -1,6 +1,9 @@
 ﻿@model WebApplication2.Models.Product
 
 @{
+    if (IsAjax) { 
+        Layout = null;
+    }
     ViewBag.Title = "Details";
 }
 

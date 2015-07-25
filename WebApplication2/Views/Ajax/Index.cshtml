@@ -1,0 +1,12 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+<div>
+    @Ajax.ActionLink("GetTime", "getTime", new AjaxOptions { UpdateTargetId = "update_target" })
+</div>
+<p id="update_target" style="background-color: yellow">n/a</p>
+
