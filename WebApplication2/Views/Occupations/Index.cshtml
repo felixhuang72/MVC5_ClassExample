@@ -1,0 +1,40 @@
+﻿@model IEnumerable<WebApplication2.Models.Occupation>
+@using PagedList
+@using PagedList.Mvc
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.OccupationName)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.OccupationName)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.OccupationId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.OccupationId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.OccupationId })
+        </td>
+    </tr>
+}
+</table>
+
+@{
+    var data = Model as IPagedList;
+}
+@Html.PagedListPager(data, p=> Url.Action("Index", new{ p = p}))
