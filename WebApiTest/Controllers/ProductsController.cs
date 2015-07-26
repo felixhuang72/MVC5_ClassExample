@@ -23,8 +23,8 @@ namespace WebApiTest.Controllers
 
         // GET: api/Products
         public IQueryable<Product> GetProduct()
-        {   
-            return db.Product;
+        {
+            return db.Product.Include("OrderLine").Take(10);
         }
 
         // GET: api/Products/5
@@ -32,7 +32,7 @@ namespace WebApiTest.Controllers
         public IHttpActionResult GetProduct(int id)
         {
             
-            Product product = db.Product.Find(id);
+            Product product = db.Product.Include("OrderLine").FirstOrDefault(p=>p.ProductId==id);
             if (product == null)
             {
                 return NotFound();

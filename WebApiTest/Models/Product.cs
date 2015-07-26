@@ -24,7 +24,7 @@ namespace WebApiTest.Models
         public Nullable<decimal> Price { get; set; }
         public Nullable<bool> Active { get; set; }
         public Nullable<decimal> Stock { get; set; }
-    
+        
         public virtual ICollection<OrderLine> OrderLine { get; set; }
     }
 }
