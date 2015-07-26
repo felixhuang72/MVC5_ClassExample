@@ -37,11 +37,7 @@ namespace WebApplication2.Controllers
             return View(data);
         }
 
-        public ActionResult CustomerOccupation()
-        {
-            var db = new FabricsEntities();
-            return View(db.vwClientOccupation.ToList());
-        }
+        
 
         public ActionResult Update5()
         {

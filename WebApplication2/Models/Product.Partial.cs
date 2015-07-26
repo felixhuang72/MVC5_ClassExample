@@ -19,6 +19,10 @@ namespace WebApplication2.Models
         public Nullable<decimal> Price { get; set; }
         public Nullable<bool> Active { get; set; }
         public Nullable<decimal> Stock { get; set; }
+
+        [UIHint("ImageUrl")]
+        [DataType(DataType.Upload)]
+        public string ImageUrl { get; set; }
     
         public virtual ICollection<OrderLine> OrderLine { get; set; }
     }

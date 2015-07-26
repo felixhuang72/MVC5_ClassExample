@@ -19,8 +19,6 @@ namespace WebApplication2.Controllers
         // GET: Products
         public ActionResult Index()
         {
-            
-            
             //return View(db.Product.Take(20).ToList());
             return View(repo.getTop10Data());
         }
@@ -107,7 +105,9 @@ namespace WebApplication2.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
+
             Product product = repo.Find(id.Value);
+
             //Product product = db.Product.Find(id);
             if (product == null)
             {
@@ -121,11 +121,17 @@ namespace WebApplication2.Controllers
         // 詳細資訊，請參閱 http://go.microsoft.com/fwlink/?LinkId=317598。
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ProductId,ProductName,Price,Active,Stock")] Product product)
+        public ActionResult Edit([Bind(Include = "ProductId,ProductName,Price,Active,Stock")] Product product, HttpPostedFileBase ImageUrl_File)
         {
             if (ModelState.IsValid)
             {
+
                 db.Entry(product).State = EntityState.Modified;
+                string imgPath = "~/Content/upload/" + ImageUrl_File.FileName + ".jpg";
+                ImageUrl_File.SaveAs(Server.MapPath(imgPath));
+                product.ImageUrl = Url.Content(imgPath);
+
+
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }

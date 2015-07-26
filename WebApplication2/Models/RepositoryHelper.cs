@@ -76,19 +76,5 @@ namespace WebApplication2.Models
 			repository.UnitOfWork = unitOfWork;
 			return repository;
 		}		
-
-		public static vwClientOccupationRepository GetvwClientOccupationRepository()
-		{
-			var repository = new vwClientOccupationRepository();
-			repository.UnitOfWork = GetUnitOfWork();
-			return repository;
-		}
-
-		public static vwClientOccupationRepository GetvwClientOccupationRepository(IUnitOfWork unitOfWork)
-		{
-			var repository = new vwClientOccupationRepository();
-			repository.UnitOfWork = unitOfWork;
-			return repository;
-		}		
 	}
 }

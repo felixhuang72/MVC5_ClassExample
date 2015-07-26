@@ -30,6 +30,5 @@ namespace WebApplication2.Models
         public virtual DbSet<Order> Order { get; set; }
         public virtual DbSet<OrderLine> OrderLine { get; set; }
         public virtual DbSet<Product> Product { get; set; }
-        public virtual DbSet<vwClientOccupation> vwClientOccupation { get; set; }
     }
 }
