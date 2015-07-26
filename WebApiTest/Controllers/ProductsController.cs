@@ -20,14 +20,23 @@ namespace WebApiTest.Controllers
             db.Configuration.LazyLoadingEnabled = false;
         }
 
-
+        
         // GET: api/Products
+        /// <summary>
+        /// 取得前 10 筆資料
+        /// </summary>
+        /// <returns></returns>
         public IQueryable<Product> GetProduct()
         {
             return db.Product.Include("OrderLine").Take(10);
         }
 
         // GET: api/Products/5
+        /// <summary>
+        /// 取得某一筆資料
+        /// </summary>
+        /// <param name="id">商品 ID</param>
+        /// <returns></returns>
         [ResponseType(typeof(Product))]
         public IHttpActionResult GetProduct(int id)
         {
